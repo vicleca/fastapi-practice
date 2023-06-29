@@ -3,12 +3,10 @@ from typing import Optional
 from fastapi import status, Response
 from enum import Enum
 
-
 router = APIRouter(
     prefix='/blog',
     tags=['blog']
 )
-
 
 @router.get(
 	'/all',
