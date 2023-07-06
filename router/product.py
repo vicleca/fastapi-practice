@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 from fastapi import APIRouter, Header
 from fastapi.responses import Response, HTMLResponse, PlainTextResponse
 
@@ -17,7 +17,7 @@ def get_all_products():
 @router.get('/withheader')
 def get_products(
     response: Response,
-    custom_header: Optional[str] = Header(None)
+    custom_header: Optional[List[str]] = Header(None)
     ):
     return products
 
