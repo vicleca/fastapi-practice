@@ -26,8 +26,8 @@ def story_exception_handler(request: Request, exc: StoryException):
 		content={'detail': exc.name}
 	)
 
-@app.exception_handler(HTTPException)
-def custom_handler(request: Request, exc: HTTPException):
-    return PlainTextResponse(str(exc), status_code=400)
+#@app.exception_handler(HTTPException)
+#def custom_handler(request: Request, exc: HTTPException):
+#    return PlainTextResponse(str(exc), status_code=400)
 
 models.Base.metadata.create_all(engine)
