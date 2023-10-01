@@ -162,3 +162,5 @@ cython_debug/
 fastapi-practice.db
 
 .vscode/
+
+log.txt
