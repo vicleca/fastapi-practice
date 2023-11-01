@@ -50,3 +50,4 @@ app.add_middleware(
 )
 
 app.mount('/files', StaticFiles(directory="files"), name='files')
+app.mount('/templates/static', StaticFiles(directory="templates/static"), name='static')

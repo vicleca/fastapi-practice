@@ -3,6 +3,8 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
 
+from schemas import ProductBase
+
 router = APIRouter(
     prefix='/templates',
     tags=['tenolates']
@@ -10,12 +12,15 @@ router = APIRouter(
 
 templates = Jinja2Templates(directory="templates")
 
-@router.get("/products/{id}", response_class=HTMLResponse)
-def read_item(id: str, request: Request):
+@router.post("/products/{id}", response_class=HTMLResponse)
+def read_item(id: str, product: ProductBase, request: Request):
 	return templates.TemplateResponse(
 		"product.html",
 		{
 			"request": request,
-			"id": id
+			"id": id,
+			"title": product.title,
+			"description": product.description,
+			"price": product.price,
 		}
 	)
