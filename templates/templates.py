@@ -7,7 +7,7 @@ from schemas import ProductBase
 
 router = APIRouter(
     prefix='/templates',
-    tags=['tenolates']
+    tags=['templates']
 )
 
 templates = Jinja2Templates(directory="templates")
